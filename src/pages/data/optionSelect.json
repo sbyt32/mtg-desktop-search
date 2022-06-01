@@ -1,0 +1,21 @@
+{
+    "options": {
+                "inventory": ["Card","Set","Set Name","Collector Number","TCGPrice","Artist"],
+                "decks": ["Deck", "Format", "Built?", "Last Update", "Cost", "Link"]
+    },
+    "header": {
+            "headname": [
+                        "Inventory",
+                        "Decks"
+                        ],
+            "bottomtext": 
+                        [
+                        "Track your card collection", 
+                        "Find your decks, update your decklists"
+                        ]
+    },
+    "deckOrg": {
+                "archetypes": ["Aggro", "Control", "Combo"],
+                "formats": ["Standard", "Pioneer", "Modern", "Legacy", "Vintage"]
+    }
+}
