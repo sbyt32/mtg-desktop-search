@@ -17,5 +17,9 @@
     "deckOrg": {
                 "archetypes": ["Aggro", "Control", "Combo"],
                 "formats": ["Standard", "Pioneer", "Modern", "Legacy", "Vintage"]
+    },
+    "purchaseHistory": {
+                "cards": ["Order Date", "Card", "Condition", "Qty", "Buy Price", "TCG Market Price", "Change"],
+                "orders": ["Order Date", "Ship Date", "Order Cost", "Current Value", "Change"]
     }
 }

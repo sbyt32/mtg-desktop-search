@@ -12,6 +12,7 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@types/sqlite3": "^3.1.8",
     "electron": "^18.2.3",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
@@ -22,7 +23,9 @@
   },
   "dependencies": {
     "apexcharts": "^3.35.2",
+    "require": "^2.4.20",
     "sirv-cli": "^2.0.0",
+    "sqlite3": "^5.0.8",
     "svelte-apexcharts": "^1.0.2",
     "svelte-spa-router": "^3.2.0"
   }

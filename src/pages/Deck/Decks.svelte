@@ -5,7 +5,7 @@
     import {slide} from 'svelte/transition'
     import { chart } from "svelte-apexcharts";
     
-    // eventually i need to count the amount of values in Decks.deckArchetype
+        // eventually i need to count the amount of values in Decks.deckArchetype
 
     // for (let i = 0; i < optionSelect.deckOrg.formats.length; i++) {
     //     let forSting = (optionSelect.deckOrg.formats[i].slice(0,3))

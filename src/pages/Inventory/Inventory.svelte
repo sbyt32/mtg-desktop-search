@@ -1,4 +1,6 @@
 <script>
+
+
 import invList from '../data/cards.json'
 import OptionSelect from '../data/optionSelect.json'
 import Head from "../components/Header.svelte";

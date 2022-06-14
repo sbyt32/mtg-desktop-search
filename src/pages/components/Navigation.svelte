@@ -16,7 +16,9 @@ export let appVers
 				<i class="fa-solid fa-bars"></i>
 			</button>
 			<h2 class="c-heading u-xlarge">
+			<a href="#/" on:click={colToggle}>
 			{appName}
+			</a>
 			<div class="c-heading__sub">{appVers}</div>
 			</h2>
 		</blaze-card-header>
@@ -24,21 +26,21 @@ export let appVers
 		<blaze-card-body>
 			<ul class="menu-list">
 				<li>
-					<a href="#/Inventory">Inventory</a>
-						<ul>
+					<a href="#/Inventory" on:click={colToggle}>Inventory</a>
+						<!-- <ul>
 							<li>
-								<a>Manage Cards</a>
+								<a on:click={colToggle}>Manage Cards</a>
 							</li>
 							<li>
-								<a>Import List</a>
+								<a on:click={colToggle}>Import List</a>
 							</li>
-						</ul>
+						</ul> -->
 					</li>
 				<li>
-					<a href="#/Decks">Decks</a>
+					<a href="#/Decks" on:click={colToggle}>Decks</a>
 				</li>
 				<li>
-					<a href="#">Purchase History</a>
+					<a href="#/History" on:click={colToggle}>Purchase History</a>
 				</li>
 			</ul>
 		</blaze-card-body>
@@ -49,6 +51,5 @@ export let appVers
 		  <button class="c-button c-button--block c-button--info">POI</button>
 		</div>
 	  </blaze-card-footer>
-
 	</blaze-card>
 </blaze-drawer>
