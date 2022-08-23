@@ -1,6 +1,6 @@
 <script>
     	function handleClick() {
-		alert('Button Clicked');
+		alert('Button Clicker');
 	}
 </script>
 
@@ -20,6 +20,7 @@
         </a>
     </div>
 </div>
+
 
 <style>
     .fullheight {

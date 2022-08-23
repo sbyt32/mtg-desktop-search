@@ -7,6 +7,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "electron ."
+    
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -23,7 +24,6 @@
   },
   "dependencies": {
     "apexcharts": "^3.35.2",
-    "require": "^2.4.20",
     "sirv-cli": "^2.0.0",
     "sqlite3": "^5.0.8",
     "svelte-apexcharts": "^1.0.2",
