@@ -1,6 +1,7 @@
   import {push} from 'svelte-spa-router'
   import slugify from 'slugify'
   import {airtable} from '../secrets.json'
+  import { writable } from 'svelte/store'
 
 async function getCardImage(i) {
     const airTableResponse = await fetch(`https://api.airtable.com/v0/${airtable.base}/${airtable.table}?api_key=${airtable.api}`)
@@ -16,7 +17,18 @@ async function handleSubmit(cardToSearch) {
     push(`/search/${slugify(`${cardToSearch}`, {
       lower:true
     })}`)
-    return searchCardResult
+    if (searchCardResult.object === "list") {
+      return searchCardResult
+    } else {
+      throw new Error(searchCardResult.details);
+    }
 }
+
+// For Buttons
+export const shopName = writable('TCGPlayer')
+export const options = [
+  {shop: "TCGPlayer", scryLink: "purchase_uris.tcgplayer" },
+  {shop: "CardMarket", scryLink: "purchase_uris.cardmarket"}
+]
 
 export {getCardImage,handleSubmit}

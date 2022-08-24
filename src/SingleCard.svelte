@@ -19,7 +19,7 @@ async function singleSearch(card) {
 				<img src={image.image_uris.png} alt="temp filler">
 			</li>
 			<li class="list-group-item">{image.type_line}</li>
-			<li class="list-group-item">{image.oracle_text}</li>
+			<li class="list-group-item" style="white-space: pre-line">{image.oracle_text}</li>
 		</ul>
 		<div class="text-center">
 			<a href={image.purchase_uris.tcgplayer} class="btn" tabindex="-1" role="button">TCGPlayer - ${image.prices.usd}</a>
