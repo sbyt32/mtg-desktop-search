@@ -62,3 +62,13 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+.cardhoarder {
+	background: rgb(241,173,79);
+}
+.tcgplayer {
+	background: rgb(132,181,64) !important; 
+}
+.mkm {
+	background: rgb(1,32,102) !important;
+	color: white !important;
+}  

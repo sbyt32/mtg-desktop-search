@@ -10,8 +10,14 @@
   
 
 <div class="container">
-	<Searchbar bind:cardToSearch={pin} on:submit={handleSubmit(pin)}/>
-	<ShopChoice/>
+	<div class="row py-2 px-0">
+		<div class="col">
+			<Searchbar bind:cardToSearch={pin} on:submit={handleSubmit(pin)}/>
+		</div>
+		<div class="col-sm-4 col-lg-3">
+			<ShopChoice/>
+		</div>
+	</div>
 	<main>
 		<Router {routes}/>
 	</main>

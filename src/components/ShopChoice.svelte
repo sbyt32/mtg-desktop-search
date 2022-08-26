@@ -1,15 +1,15 @@
 <script>
-import { options, shopName } from "../scripts";
-let shopChoiceName = options[0].shop
+import { options, shopName, shopShort, shopLink } from "../scripts";
+let shopNameChoice = options[0].shop
 
 function chooseShop() {
-    shopName.update(shop => shopChoiceName.shop)
+  shopName.update(shop => shopNameChoice.shop)
+  shopShort.update(shop => shopNameChoice.short)
+  shopLink.update(shop => shopNameChoice.link)
+
 }
 </script>
-
-
-<select class="form-select" bind:value={shopChoiceName} on:change={() => chooseShop()}>
-  {#each options as option}
-    <option value={option}>{option.shop}</option>
-  {/each}
+<select class="form-select" bind:value={shopNameChoice} on:change={() => chooseShop()}>
+    <option value={options[0]} selected>{options[0].shop}</option>
+    <option value={options[1]}>{options[1].shop}</option>
 </select>

@@ -1,14 +1,25 @@
 <script>
-    import { options, shopName } from "../../scripts";
-    export let shop, shopTCG, shopMKM
+    import { shopShort, shopLink } from "../../scripts";
+    import slugify from "slugify";
+    export let shopPaperUSD = '', shopPaper = '', shopPaperEUR = ''
+    export var noValue = false
+
 </script>
 
-{#key shopName}
-    {#if options[0].shop === $shopName}
-        <a href="https://www.tcgplayer.com/product/{shopTCG}" class="col btn border">{shop}</a>
-    {:else}
-        <a href="https://www.cardmarket.com/en/Magic/Products/Search?searchString={shopMKM}" class="col btn border">
-            {shop}
-        </a>
-    {/if}
-{/key}
+
+{#if noValue === true}
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a class="col btn border disabled {$shopShort}" aria-disabled="true">N/A</a>
+{:else}
+
+    <a href={$shopLink.concat(slugify(shopPaper, {replacement: "+"}))} class="col btn border {$shopShort}">
+        <slot>
+
+        </slot>
+        {#if $shopShort === "tcgplayer"}
+            ${shopPaperUSD}
+        {:else}
+            €{shopPaperEUR}
+        {/if}
+    </a>
+{/if}

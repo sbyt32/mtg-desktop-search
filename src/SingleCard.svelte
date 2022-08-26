@@ -1,14 +1,16 @@
 <script>
+import BuyButton from "./components/searchedCard/BuyButton.svelte";
+import slugify from "slugify";
+import { shopName, titleCase } from "./scripts";
+
 export let params;
 const formats = ['Standard', "Pioneer", "Explorer", "Modern", "Pauper", "Legacy", "Vintage", "Commander"]
 
 async function singleSearch(card) {
-	const scryfallResp = await fetch(`https://api.scryfall.com/cards/named?exact=${card}`)
+	const scryfallResp = await fetch(`https://api.scryfall.com/cards/named?exact=${card}&set=${params.set}`)
 	const scryfallJson = await scryfallResp.json();
-	console.log(scryfallJson.legalities);
 	return scryfallJson;
 }
-
 </script>
 
 {#await singleSearch(params.name) then image}
@@ -21,14 +23,16 @@ async function singleSearch(card) {
 			<li class="list-group-item">{image.type_line}</li>
 			<li class="list-group-item" style="white-space: pre-line">{image.oracle_text}</li>
 		</ul>
-		<div class="text-center">
-			<a href={image.purchase_uris.tcgplayer} class="btn" tabindex="-1" role="button">TCGPlayer - ${image.prices.usd}</a>
-			<a href={image.purchase_uris.cardhoarder} class="btn" tabindex="-1" role="button">MTGO - {image.prices.tix} tix</a>
+		<div class="text-center py-1">
+			<BuyButton shopPaper={image.name} shopPaperEUR={image.prices.eur} shopPaperUSD={image.prices.usd}>
+				{$shopName} -
+			</BuyButton>
+			<a href="https://www.cardhoarder.com/cards?data%5Bsearch%5D={slugify(image.name, {lower: true})}" class="col btn border cardhoarder">MTGO - {image.prices.tix} TIX</a>
 		</div>
 	</div>
 
 
-<div class="pt-3">
+<div class="">
 	<div class="row border">
 		<div class="col text-center">
 			Legality
@@ -40,9 +44,7 @@ async function singleSearch(card) {
 					{format}
 				</div>
 				<div class="col">
-					<!-- I got no idea how to have these easily line up, idk why but it's set up so that every format is a different value but i guess that is the most sense making -->
-					<!-- {Object.keys(image.legalities)} -->
-					idk fix it later
+					{titleCase((image.legalities[format.toLowerCase()]))}
 				</div>
 			{/each}
 		</div>
