@@ -1,4 +1,4 @@
-#MTG Desktop Search
+# MTG Desktop Search
 
 A simple way to look up for cards on Scryfall. 
 
